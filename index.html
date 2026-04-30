@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tim Dailey — Digital Strategy &amp; SEO Consultant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --linen:#FAF7F2;
+  --linen-deep:#F3EDE3;
+  --clay:#C4796A;
+  --clay-dark:#A55E50;
+  --clay-light:#F0E0DC;
+  --espresso:#2C2520;
+  --taupe:#8C7B6A;
+  --taupe-light:#B8AFA6;
+  --border:#E0D8CE;
+  --white:#FFFFFF;
+  --max-w:1120px;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+}
+
+html{scroll-behavior:smooth;font-size:16px}
+
+body{
+  font-family:var(--sans);
+  color:var(--espresso);
+  background:var(--linen);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 2.5rem}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:200;
+  background:rgba(250,247,242,0.96);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--border);
+  padding:1.1rem 0;
+}
+.nav-inner{
+  max-width:var(--max-w);margin:0 auto;padding:0 2.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-mark{
+  font-family:var(--serif);font-size:1.25rem;font-weight:400;
+  color:var(--espresso);text-decoration:none;letter-spacing:0.01em;
+}
+.nav-links{display:flex;align-items:center;gap:2.25rem;list-style:none}
+.nav-links a{
+  font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--taupe);text-decoration:none;transition:color 0.2s;
+}
+.nav-links a:hover{color:var(--espresso)}
+.nav-cta{
+  background:var(--clay) !important;color:var(--white) !important;
+  padding:0.55rem 1.2rem;border-radius:3px;
+  letter-spacing:0.08em !important;transition:background 0.2s !important;
+}
+.nav-cta:hover{background:var(--clay-dark) !important}
+.nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:4px}
+.nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--espresso);margin:5px 0;transition:all 0.2s}
+
+/* ── HERO ── */
+#hero{
+  background:var(--linen);
+  padding:7rem 0 5rem;
+  position:relative;
+  overflow:hidden;
+}
+.hero-bg-mark{
+  position:absolute;right:-60px;top:20px;
+  font-family:var(--serif);font-size:28rem;font-weight:300;
+  color:var(--border);opacity:0.35;line-height:1;
+  pointer-events:none;user-select:none;
+}
+.hero-inner{max-width:760px;position:relative;z-index:1}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:0.6rem;
+  font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--clay);margin-bottom:2rem;
+}
+.hero-eyebrow-line{width:28px;height:1px;background:var(--clay);display:inline-block}
+#hero h1{
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(2.4rem,5vw,4rem);
+  line-height:1.15;color:var(--espresso);
+  margin-bottom:1.5rem;
+}
+#hero h1 em{font-style:italic;color:var(--clay)}
+.hero-sub{
+  font-family:var(--serif);font-size:1.2rem;font-weight:300;font-style:italic;
+  color:var(--taupe);margin-bottom:1.25rem;
+}
+.hero-body{
+  font-size:1rem;color:var(--espresso);opacity:0.8;
+  max-width:580px;margin-bottom:2.75rem;line-height:1.8;
+}
+.btn-row{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.btn-fill{
+  background:var(--clay);color:var(--white);
+  padding:0.85rem 1.75rem;border-radius:3px;
+  text-decoration:none;font-size:0.8rem;letter-spacing:0.06em;
+  text-transform:uppercase;transition:background 0.2s;
+  display:inline-block;
+}
+.btn-fill:hover{background:var(--clay-dark)}
+.btn-outline{
+  border:1px solid var(--border);color:var(--espresso);
+  padding:0.85rem 1.75rem;border-radius:3px;
+  text-decoration:none;font-size:0.8rem;letter-spacing:0.06em;
+  text-transform:uppercase;transition:border-color 0.2s;
+  display:inline-block;
+}
+.btn-outline:hover{border-color:var(--taupe)}
+.logo-strip{margin-top:4.5rem;padding-top:2.5rem;border-top:1px solid var(--border)}
+.logo-strip-lbl{
+  font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--taupe-light);margin-bottom:1rem;
+}
+.logo-names{display:flex;flex-wrap:wrap;gap:0.4rem 2.5rem}
+.logo-names span{
+  font-family:var(--serif);font-size:1rem;font-weight:400;
+  color:var(--taupe-light);letter-spacing:0.02em;
+}
+
+/* ── VALUE ── */
+#value{background:var(--white);padding:5.5rem 0}
+.value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3.5rem}
+.val-bar{width:36px;height:2px;background:var(--clay);margin-bottom:1.25rem}
+.value-item h3{
+  font-family:var(--serif);font-size:1.5rem;font-weight:400;
+  margin-bottom:0.75rem;color:var(--espresso);
+}
+.value-item p{font-size:0.9rem;color:var(--taupe);line-height:1.8}
+
+/* ── SECTION CHROME ── */
+.sec-eye{
+  font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--clay);margin-bottom:0.6rem;
+}
+.sec-h{
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(1.8rem,3.5vw,2.75rem);
+  color:var(--espresso);line-height:1.2;
+}
+.sec-sub{
+  font-size:1rem;color:var(--taupe);
+  max-width:600px;margin-top:0.75rem;line-height:1.8;
+}
+
+/* ── SERVICES ── */
+#services{background:var(--linen);padding:6rem 0}
+.services-head{margin-bottom:3.5rem}
+.svc-card{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-left:3px solid var(--clay);
+  border-radius:3px;
+  padding:2.5rem 2.75rem;
+  margin-bottom:1.25rem;
+  transition:box-shadow 0.2s;
+}
+.svc-card:hover{box-shadow:0 4px 24px rgba(44,37,32,0.06)}
+.svc-name{
+  font-family:var(--serif);font-size:1.6rem;font-weight:400;
+  color:var(--espresso);margin-bottom:0.2rem;
+}
+.svc-hook{
+  font-size:0.78rem;color:var(--clay);letter-spacing:0.06em;
+  margin-bottom:1.25rem;font-family:var(--sans);
+}
+.svc-body{
+  font-size:0.9rem;color:var(--espresso);opacity:0.85;
+  line-height:1.85;margin-bottom:1.5rem;max-width:700px;
+}
+.fit-lbl{
+  font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--taupe-light);margin-bottom:0.6rem;
+}
+.fit-list{list-style:none;display:flex;flex-direction:column;gap:0.35rem}
+.fit-list li{
+  font-size:0.85rem;color:var(--taupe);
+  padding-left:1.5rem;position:relative;line-height:1.6;
+}
+.fit-list li::before{content:'—';position:absolute;left:0;color:var(--clay)}
+
+/* ── ABOUT ── */
+#about{background:var(--white);padding:6rem 0}
+.about-grid{display:grid;grid-template-columns:1fr 420px;gap:5rem;align-items:start}
+.about-prose .sec-h{margin-bottom:2rem}
+.about-prose p{
+  font-size:0.95rem;color:var(--espresso);opacity:0.85;
+  line-height:1.9;margin-bottom:1.25rem;
+}
+.about-cta-link{
+  display:inline-block;margin-top:0.75rem;
+  color:var(--clay);font-size:0.9rem;text-decoration:none;
+  border-bottom:1px solid var(--clay);padding-bottom:2px;
+  transition:color 0.2s,border-color 0.2s;
+}
+.about-cta-link:hover{color:var(--clay-dark);border-color:var(--clay-dark)}
+
+/* Full story toggle */
+.story-toggle-wrap{margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border)}
+.story-btn{
+  background:none;border:none;padding:0;cursor:pointer;
+  display:flex;align-items:center;gap:0.5rem;
+  font-family:var(--serif);font-size:1rem;font-weight:400;
+  color:var(--clay);transition:color 0.2s;
+}
+.story-btn:hover{color:var(--clay-dark)}
+.story-arrow{display:inline-block;transition:transform 0.25s;font-size:1.1rem}
+.story-arrow.open{transform:rotate(90deg)}
+.story-content{display:none;margin-top:1.5rem}
+.story-content.open{display:block}
+.story-content p{
+  font-size:0.9rem;color:var(--espresso);opacity:0.8;
+  line-height:1.9;margin-bottom:1.15rem;
+}
+
+/* Career timeline */
+.career-lbl{
+  font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--taupe-light);margin-bottom:1rem;
+}
+.timeline-item{
+  padding:1.1rem 0;
+  border-top:1px solid var(--border);
+}
+.timeline-item:last-child{border-bottom:1px solid var(--border)}
+.t-org{font-size:0.9rem;font-weight:500;color:var(--espresso);margin-bottom:2px}
+.t-role{font-size:0.82rem;color:var(--taupe)}
+.t-dates{font-size:0.75rem;color:var(--taupe-light);margin-top:2px}
+
+/* ── WORK ── */
+#work{background:var(--linen);padding:6rem 0}
+.work-head{margin-bottom:3rem}
+.case{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:3px;margin-bottom:0.75rem;overflow:hidden;
+}
+.case-hdr{
+  padding:1.5rem 2rem;cursor:pointer;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  transition:background 0.15s;
+}
+.case-hdr:hover{background:var(--linen)}
+.case-hdr h3{
+  font-family:var(--serif);font-size:1.15rem;font-weight:400;color:var(--espresso);
+}
+.chevron{
+  color:var(--clay);font-size:1.1rem;
+  transition:transform 0.2s;flex-shrink:0;
+}
+.chevron.open{transform:rotate(180deg)}
+.case-body{
+  display:none;padding:0 2rem 2rem;
+  border-top:1px solid var(--border);
+}
+.case-body.open{display:block}
+.case-sec{margin-top:1.5rem}
+.case-sec-lbl{
+  font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--clay);margin-bottom:0.5rem;
+}
+.case-sec p{font-size:0.88rem;color:var(--espresso);opacity:0.85;line-height:1.8}
+
+/* ── CONTACT ── */
+#contact{background:var(--white);padding:6rem 0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.contact-intro{font-size:0.95rem;color:var(--taupe);line-height:1.85;margin:1rem 0 2rem}
+.fit-block{margin-bottom:1.75rem}
+.fit-block-lbl{
+  font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--taupe-light);margin-bottom:0.6rem;
+}
+.contact-list{list-style:none;display:flex;flex-direction:column;gap:0.4rem}
+.contact-list li{
+  font-size:0.87rem;color:var(--espresso);opacity:0.85;
+  padding-left:1.5rem;position:relative;line-height:1.65;
+}
+.contact-list li::before{content:'—';position:absolute;left:0;color:var(--clay)}
+
+/* Form */
+.cform{display:flex;flex-direction:column;gap:1.25rem}
+.ffield{display:flex;flex-direction:column;gap:0.4rem}
+.ffield label{
+  font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--taupe);
+}
+.ffield input,.ffield textarea{
+  background:var(--linen);border:1px solid var(--border);border-radius:3px;
+  padding:0.75rem 1rem;font-family:var(--sans);font-size:0.9rem;
+  color:var(--espresso);outline:none;width:100%;transition:border-color 0.2s;
+}
+.ffield input:focus,.ffield textarea:focus{border-color:var(--clay)}
+.ffield textarea{min-height:110px;resize:vertical}
+.fsub{
+  background:var(--clay);color:var(--white);border:none;
+  padding:0.85rem 1.75rem;border-radius:3px;cursor:pointer;
+  font-family:var(--sans);font-size:0.8rem;letter-spacing:0.06em;
+  text-transform:uppercase;transition:background 0.2s;align-self:flex-start;
+}
+.fsub:hover{background:var(--clay-dark)}
+.cal-note{
+  margin-top:1.5rem;padding-top:1.5rem;
+  border-top:1px solid var(--border);
+  font-size:0.87rem;color:var(--taupe);line-height:1.8;
+}
+.cal-note a{
+  color:var(--clay);text-decoration:none;
+  border-bottom:1px solid var(--clay);padding-bottom:1px;
+}
+
+/* ── FOOTER ── */
+footer{background:var(--espresso);padding:3rem 0}
+.foot-inner{
+  max-width:var(--max-w);margin:0 auto;padding:0 2.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1.5rem;
+}
+.foot-mark{
+  font-family:var(--serif);font-size:1.2rem;font-weight:300;
+  color:var(--linen);letter-spacing:0.02em;
+}
+.foot-links{display:flex;gap:2rem;list-style:none}
+.foot-links a{
+  font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--taupe);text-decoration:none;transition:color 0.2s;
+}
+.foot-links a:hover{color:var(--linen)}
+.foot-meta{font-size:0.78rem;color:var(--taupe);text-align:right;line-height:1.7}
+.foot-meta a{color:var(--taupe);text-decoration:none}
+.foot-meta a:hover{color:var(--linen)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .value-grid{grid-template-columns:1fr;gap:2.25rem}
+  .about-grid{grid-template-columns:1fr;gap:3rem}
+  .about-grid .about-right{order:-1}
+  .contact-grid{grid-template-columns:1fr;gap:3rem}
+  .hero-bg-mark{display:none}
+}
+@media(max-width:680px){
+  .wrap{padding:0 1.5rem}
+  .nav-inner{padding:0 1.5rem}
+  .foot-inner{padding:0 1.5rem;flex-direction:column;align-items:flex-start}
+  .foot-meta{text-align:left}
+  .nav-links{display:none}
+  .nav-links.open{
+    display:flex;flex-direction:column;align-items:flex-start;
+    position:absolute;top:100%;left:0;right:0;
+    background:var(--white);border-bottom:1px solid var(--border);
+    padding:1.5rem 2rem;gap:1.25rem;
+  }
+  .nav-hamburger{display:block}
+  nav{position:relative}
+  #hero{padding:4.5rem 0 3.5rem}
+  .svc-card{padding:1.75rem 1.5rem}
+  .case-hdr{padding:1.25rem 1.5rem}
+  .case-body{padding:0 1.5rem 1.5rem}
+}
+
+/* ── SCROLL FADE IN ── */
+.fade-in{opacity:0;transform:translateY(18px);transition:opacity 0.5s ease,transform 0.5s ease}
+.fade-in.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="site-nav">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-mark">Tim Dailey</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#services" onclick="closeMenu()">Services</a></li>
+      <li><a href="#about" onclick="closeMenu()">About</a></li>
+      <li><a href="#work" onclick="closeMenu()">Work</a></li>
+      <li><a href="#contact" class="nav-cta" onclick="closeMenu()">Let's Talk</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="wrap">
+    <div class="hero-bg-mark">T</div>
+    <div class="hero-inner fade-in">
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-line"></span>
+        Digital Strategy &amp; SEO Consultant
+      </div>
+      <h1>Your customers are searching <em>differently.</em><br>Is your business showing up?</h1>
+      <p class="hero-sub">20+ years of digital strategy, SEO, and AI search optimization.</p>
+      <p class="hero-body">For over 20 years, I've built digital strategies that connect the right audiences to the right content at the right moment. From Fortune 500 financial institutions to independent professional practices, I've led the work that makes websites perform — not just look good. If your business depends on being found online, we should talk.</p>
+      <div class="btn-row">
+        <a href="#contact" class="btn-fill">Let's Talk</a>
+        <a href="#work" class="btn-outline">See My Work</a>
+      </div>
+      <div class="logo-strip">
+        <div class="logo-strip-lbl">Trusted by organizations including</div>
+        <div class="logo-names">
+          <span>GridGain</span>
+          <span>Aerospike</span>
+          <span>EDB</span>
+          <span>Citizens Bank</span>
+          <span>UMass Medical School</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE -->
+<section id="value">
+  <div class="wrap">
+    <div class="value-grid">
+      <div class="value-item fade-in">
+        <div class="val-bar"></div>
+        <h3>Search That Sticks</h3>
+        <p>SEO strategies grounded in how people actually search — not just how algorithms are documented. Technical depth. Content clarity. Long-term compounding results.</p>
+      </div>
+      <div class="value-item fade-in">
+        <div class="val-bar"></div>
+        <h3>AI Visibility</h3>
+        <p>Your customers are asking AI assistants for recommendations before they ever visit your website. I help you show up in those answers — credibly and consistently.</p>
+      </div>
+      <div class="value-item fade-in">
+        <div class="val-bar"></div>
+        <h3>Sites That Convert</h3>
+        <p>Traffic without conversion is just noise. I audit the full digital experience and find the gaps between what your site promises and what it delivers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="services-head fade-in">
+      <div class="sec-eye">What I Do</div>
+      <h2 class="sec-h">Services</h2>
+      <p class="sec-sub">I work with organizations of all sizes — from independent professional practices to enterprise SaaS companies — that need senior-level digital expertise without a senior-level headcount.</p>
+    </div>
+
+    <div class="svc-card fade-in">
+      <div class="svc-name">SEO &amp; Content Strategy</div>
+      <div class="svc-hook">Get Found. Stay Found.</div>
+      <p class="svc-body">You've invested in what you do. But if the right people can't find you when they're searching, you're leaving business on the table. I build SEO strategies that go beyond rankings — connecting keyword opportunity to content investment, fixing the technical issues that hold sites back, and creating the kind of editorial consistency that compounds over time. Whether you need a full audit, a content roadmap, or an ongoing optimization program, I bring the depth that in-house generalists rarely have time for.</p>
+      <div class="fit-lbl">Good fit if</div>
+      <ul class="fit-list">
+        <li>Your organic traffic has plateaued or declined</li>
+        <li>You've published content but aren't sure what's actually working</li>
+        <li>You're preparing for a site migration or rebrand</li>
+        <li>You're a small business or solo practice that's never had a real SEO strategy</li>
+        <li>You need someone who can work alongside your existing team — or independently if you don't have one</li>
+      </ul>
+    </div>
+
+    <div class="svc-card fade-in">
+      <div class="svc-name">GEO / AI Search Optimization</div>
+      <div class="svc-hook">Your Next Customer Might Ask an AI Before They Ask Google.</div>
+      <p class="svc-body">AI assistants are rapidly becoming part of how people research businesses, compare options, and decide who to trust. Whether you're a software company or a local financial advisor, if your brand isn't showing up in those conversations — or worse, is being described inaccurately — you're invisible at a critical moment. Generative Engine Optimization (GEO) is the discipline of making your brand discoverable, credible, and accurately represented across AI-driven search. I assess where you stand today and build a roadmap to improve it.</p>
+      <div class="fit-lbl">Good fit if</div>
+      <ul class="fit-list">
+        <li>You're in a competitive category where buyers do their homework online</li>
+        <li>You've noticed AI tools aren't mentioning your business — or are getting it wrong</li>
+        <li>You want to get ahead of this shift before your competitors do</li>
+        <li>You're not sure what AI search means for your business yet — we can start there</li>
+      </ul>
+    </div>
+
+    <div class="svc-card fade-in">
+      <div class="svc-name">CRO &amp; Digital Experience</div>
+      <div class="svc-hook">More From What You Already Have.</div>
+      <p class="svc-body">Conversion rate optimization isn't about button colors. It's about understanding the gap between what your site says and what your visitors actually need — then closing it systematically. I bring a blend of UX thinking, behavioral analysis, and content strategy to identify where and why your site is losing people. Then I prioritize the changes that will move the needle, and help your team execute them. From landing pages to full funnel reviews, this work pays for itself.</p>
+      <div class="fit-lbl">Good fit if</div>
+      <ul class="fit-list">
+        <li>Your traffic is healthy but inquiries or conversions are disappointing</li>
+        <li>Your website hasn't been looked at critically in a few years</li>
+        <li>You're launching a new service or trying to reach a new type of client</li>
+        <li>You're a small business owner who built your own site and suspects it could be working harder</li>
+      </ul>
+    </div>
+
+    <div class="svc-card fade-in">
+      <div class="svc-name">Fractional Leadership &amp; Advisory</div>
+      <div class="svc-hook">Senior Expertise. Flexible Engagement.</div>
+      <p class="svc-body">Not every organization needs — or can afford — a full-time Director of Digital Marketing. But most growing businesses do need someone who's been in that seat before. I work with a small number of clients as a fractional digital leader: shaping strategy, coaching teams, and bringing the institutional experience that takes years to build. I also engage in an advisory capacity for business owners and marketing leaders who want a trusted outside perspective.</p>
+      <div class="fit-lbl">Good fit if</div>
+      <ul class="fit-list">
+        <li>You're between full-time marketing hires</li>
+        <li>You're a small business owner handling marketing yourself and need a real sounding board</li>
+        <li>Your current team needs a senior voice to sharpen their thinking</li>
+        <li>You want someone to pressure-test your digital strategy before you invest more into it</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-prose fade-in">
+        <div class="sec-eye">About</div>
+        <h2 class="sec-h">20 Years. A Few Industries.<br>One Through-Line.</h2>
+        <p>I started in web development and information architecture before "digital marketing" was a widely used phrase. Since then I've watched the industry evolve through every major shift — from early SEO to social, from content marketing to marketing automation, and now into the AI-driven search era. I've stayed close to the technical side while building the strategic perspective that only comes from doing this work across very different kinds of organizations.</p>
+        <p>My career has spanned healthcare, financial services, and B2B SaaS. At ForHealth Consulting (part of UMass Medical School), I spent over a decade building web strategy for public health initiatives — work that demanded rigor, clarity, and the ability to reach audiences that weren't already looking for you. At Citizens Bank, I led website strategy at a scale where every UX decision carried real consequence. At EDB and Aerospike, I served as product owner for complex marketing websites — leading redesigns, platform migrations, and the transition into GEO and AI search optimization. Most recently, I consulted with GridGain on a full-site engagement that included glossary content reaching position one in Google and appearing in AI Overview results.</p>
+        <p>What I've learned across all of it: the fundamentals work. Understand your audience. Make it easy for them to find you, understand you, and trust you. Then optimize relentlessly.</p>
+        <p>I'm based in Groton, Massachusetts, and work with clients across the U.S. I'm selective about the engagements I take on — not because I'm unavailable, but because I do my best work when I'm genuinely invested in what a client is building.</p>
+        <a href="#contact" class="about-cta-link">Want to know if we're a fit? →</a>
+
+        <div class="story-toggle-wrap">
+          <button class="story-btn" onclick="toggleStory(this)">
+            <span class="story-arrow">›</span>
+            The full story
+          </button>
+          <div class="story-content">
+            <p>Before the director titles and the enterprise clients, there was a lot of hands-on work that built the foundation for all of it.</p>
+            <p>In the late 1990s and early 2000s, I was designing and developing websites when most businesses didn't have one yet — building multimedia CD-ROMs and early web experiences at HealthStream and SilverPlatter Education, then moving into visual design and UI work at Show and Tell Inc. Those years taught me to think about usability before there was much of a vocabulary for it.</p>
+            <p>From roughly 2001 through 2010, alongside my other work, I freelanced for small businesses and several school districts — building and maintaining websites, helping organizations figure out what their digital presence should even be. Many of these clients had never worked with a web professional before, which meant translating technical decisions into plain language was part of the job from the start. That experience is a big reason I'm just as comfortable working with a solo financial advisor as I am with a Series B software company.</p>
+            <p>At Needham High School, I wore several different hats over the years — district webmaster, technology support, and briefly, teacher. I taught Photography and Graphic Design, secured a grant to bring digital photography into the curriculum, and ran adult education courses in web design. Teaching turned out to be useful training for consulting: you get good at explaining things clearly, meeting people where they are, and making complicated subjects feel manageable.</p>
+            <p>My very first professional web role was at Curry College, where I developed and maintained the college's first-ever website while managing their Educational Technology Services Office. It's a long way from there to leading a platform migration to Contentful and React — but the thread connecting all of it is the same: figure out what someone needs from a digital experience, then build it as well as you possibly can.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-right fade-in">
+        <div class="career-lbl">Career</div>
+        <div class="timeline-item">
+          <div class="t-org">Independent Consulting</div>
+          <div class="t-role">Small businesses, school districts &amp; select engagements</div>
+          <div class="t-dates">2001 – Present</div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-org">GridGain</div>
+          <div class="t-role">Digital Marketing / Web Strategy Consultant</div>
+          <div class="t-dates">2025 – 2026</div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-org">Aerospike</div>
+          <div class="t-role">Director of Digital Marketing</div>
+          <div class="t-dates">2023 – 2025</div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-org">Citizens Bank</div>
+          <div class="t-role">Website Strategy Manager, VP</div>
+          <div class="t-dates">2022 – 2023</div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-org">EDB</div>
+          <div class="t-role">Director, Digital Marketing</div>
+          <div class="t-dates">2018 – 2022</div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-org">ForHealth Consulting / UMass Medical School</div>
+          <div class="t-role">Senior Web Development &amp; Creative Manager</div>
+          <div class="t-dates">2006 – 2018</div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-org">InContext</div>
+          <div class="t-role">Interaction Designer &amp; UX Researcher</div>
+          <div class="t-dates">2005 – 2006</div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-org">Show and Tell Inc. · HealthStream · Curry College</div>
+          <div class="t-role">Web Architect, Developer, Ed. Tech</div>
+          <div class="t-dates">1995 – 2001</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work">
+  <div class="wrap">
+    <div class="work-head fade-in">
+      <div class="sec-eye">Work</div>
+      <h2 class="sec-h">A Few Things I've Worked On</h2>
+      <p class="sec-sub">I don't believe in long case study PDFs that nobody reads. Here are the situations, the approaches, and what came out the other side.</p>
+    </div>
+
+    <div class="case fade-in">
+      <div class="case-hdr" onclick="toggleCase(this)">
+        <h3>SEO, GEO &amp; Full-Site Optimization — Database Technology</h3>
+        <span class="chevron">∨</span>
+      </div>
+      <div class="case-body">
+        <div class="case-sec"><div class="case-sec-lbl">The situation</div><p>A B2B database technology company needed its website to work harder across SEO, user experience, and AI search visibility. Landing pages, product pages, and the blog had accumulated technical debt, and the site's information architecture wasn't guiding visitors toward conversion.</p></div>
+        <div class="case-sec"><div class="case-sec-lbl">The approach</div><p>I rebuilt and optimized landing pages, the homepage, and product pages for both search and UX. I developed a targeted keyword and GEO strategy aligned to technical buyer journeys, reworked the site navigation and information architecture, and built out a library of glossary pages designed to capture bottom-of-funnel search intent. I also resolved technical SEO issues holding back the trials and downloads experience.</p></div>
+        <div class="case-sec"><div class="case-sec-lbl">What happened</div><p>Several glossary pages reached position one in Google search results. Multiple pages also began appearing in Google's AI Overview results — organic visibility extending into the AI-driven layer of search that most competitors hadn't begun to address yet.</p></div>
+      </div>
+    </div>
+
+    <div class="case fade-in">
+      <div class="case-hdr" onclick="toggleCase(this)">
+        <h3>Scaling a Public Health Web Presence — Academic Medical Institution</h3>
+        <span class="chevron">∨</span>
+      </div>
+      <div class="case-body">
+        <div class="case-sec"><div class="case-sec-lbl">The situation</div><p>ForHealth Consulting (University of Massachusetts Medical School) operated a portfolio of public health programs, each with its own web presence, audience, and compliance requirements. There was no unified strategy, no shared standards, and significant redundancy.</p></div>
+        <div class="case-sec"><div class="case-sec-lbl">The approach</div><p>Over 12 years, I built the web strategy infrastructure that brought those properties into alignment — from content governance frameworks and UX standards to analytics implementation and CMS migration work. I managed day-to-day execution for multiple concurrent sites simultaneously.</p></div>
+        <div class="case-sec"><div class="case-sec-lbl">What happened</div><p>The organization gained a coherent digital presence across programs, with measurable improvements in user engagement and a significant reduction in the time it took to launch new initiatives. The work also built internal capacity where there had been almost none.</p></div>
+      </div>
+    </div>
+
+    <div class="case fade-in">
+      <div class="case-hdr" onclick="toggleCase(this)">
+        <h3>Website Strategy at Scale — Financial Services</h3>
+        <span class="chevron">∨</span>
+      </div>
+      <div class="case-body">
+        <div class="case-sec"><div class="case-sec-lbl">The situation</div><p>Citizens Bank needed to tighten the connection between its digital experience and measurable business outcomes — a complex challenge with significant regulatory constraints, massive content volume, and multiple stakeholder groups with competing priorities.</p></div>
+        <div class="case-sec"><div class="case-sec-lbl">The approach</div><p>I led website strategy efforts focused on the intersection of UX, SEO, and conversion — identifying where the experience was breaking down and building the internal alignment needed to fix it. This meant bringing together product, compliance, marketing, and technology stakeholders around a shared prioritization framework.</p></div>
+        <div class="case-sec"><div class="case-sec-lbl">What happened</div><p>Page-level performance improved across key acquisition flows. Equally valuable: the organization developed a cleaner process for making website decisions — one that was faster, better-documented, and less dependent on institutional memory.</p></div>
+      </div>
+    </div>
+
+    <div class="case fade-in">
+      <div class="case-hdr" onclick="toggleCase(this)">
+        <h3>AI Search Visibility Audit — B2B SaaS Platform</h3>
+        <span class="chevron">∨</span>
+      </div>
+      <div class="case-body">
+        <div class="case-sec"><div class="case-sec-lbl">The situation</div><p>A SaaS company in a competitive data infrastructure category noticed that AI assistants were either not mentioning their product in relevant conversations or describing it in ways that were incomplete and occasionally inaccurate.</p></div>
+        <div class="case-sec"><div class="case-sec-lbl">The approach</div><p>I ran a structured AI visibility assessment across multiple dimensions — content openness, structured data, brand authority signals, messaging clarity, and intent signal infrastructure. The audit surfaced both quick wins and longer-horizon strategic priorities.</p></div>
+        <div class="case-sec"><div class="case-sec-lbl">What happened</div><p>The team had a clear, prioritized roadmap for improving their AI discoverability — and a framework for measuring progress over time. Several high-impact changes were implemented within 60 days of the engagement.</p></div>
+      </div>
+    </div>
+
+    <div class="case fade-in">
+      <div class="case-hdr" onclick="toggleCase(this)">
+        <h3>SEO &amp; AI Visibility — Independent Financial Advisory Practice</h3>
+        <span class="chevron">∨</span>
+      </div>
+      <div class="case-body">
+        <div class="case-sec"><div class="case-sec-lbl">The situation</div><p>A solo financial advisor had a professional website but no real search presence — invisible in local search results and absent from AI-driven recommendations, even for queries their ideal clients were clearly asking.</p></div>
+        <div class="case-sec"><div class="case-sec-lbl">The approach</div><p>I ran a combined SEO and AI visibility audit, identifying gaps in local search optimization, schema markup, and the type of authoritative content that helps practices appear in AI-generated recommendations. The fixes didn't require a massive content investment — just the right ones, done correctly.</p></div>
+        <div class="case-sec"><div class="case-sec-lbl">What happened</div><p>The practice began appearing in local search results for relevant queries within weeks, and AI tools started surfacing them more accurately when asked about financial advisors in their area. The advisor had a clear picture of what was working and a simple ongoing checklist to maintain it.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="fade-in">
+        <div class="sec-eye">Work With Me</div>
+        <h2 class="sec-h">Let's Figure Out<br>If We're a Fit</h2>
+        <p class="contact-intro">I work with a small number of clients at a time, which means I can actually pay attention to what you're building — or running, or growing. If you're dealing with a challenge in organic search, AI visibility, or digital experience, I'm happy to have a conversation.</p>
+
+        <div class="fit-block">
+          <div class="fit-block-lbl">Good fits</div>
+          <ul class="contact-list">
+            <li>Small businesses and independent professionals who want their website to bring in clients</li>
+            <li>B2B SaaS companies navigating search and AI discoverability</li>
+            <li>Healthcare and financial services organizations building trust online</li>
+            <li>Business owners, founders, and marketing leaders who want a senior partner, not another vendor</li>
+          </ul>
+        </div>
+
+        <div class="fit-block">
+          <div class="fit-block-lbl">Not a great fit</div>
+          <ul class="contact-list">
+            <li>Pure e-commerce or D2C (not where my depth is)</li>
+            <li>One-off deliverables with no strategic context</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fade-in">
+        <form class="cform" onsubmit="return false">
+          <div class="ffield">
+            <label for="f-name">Your name</label>
+            <input type="text" id="f-name" placeholder="Jane Smith">
+          </div>
+          <div class="ffield">
+            <label for="f-co">Company or practice</label>
+            <input type="text" id="f-co" placeholder="Acme Co.">
+          </div>
+          <div class="ffield">
+            <label for="f-msg">What you're working on</label>
+            <textarea id="f-msg" placeholder="A sentence or two is fine"></textarea>
+          </div>
+          <div class="ffield">
+            <label for="f-ref">How you heard about me</label>
+            <input type="text" id="f-ref" placeholder="LinkedIn, referral, search...">
+          </div>
+          <button type="submit" class="fsub">Send It Over</button>
+        </form>
+        <div class="cal-note">
+          I respond to all inquiries personally, usually within one business day.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-mark">Tim Dailey</div>
+    <ul class="foot-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="foot-meta">
+      Groton, Massachusetts
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleCase(hdr){
+  const body=hdr.nextElementSibling;
+  const chev=hdr.querySelector('.chevron');
+  body.classList.toggle('open');
+  chev.classList.toggle('open');
+}
+function toggleStory(btn){
+  const content=btn.parentElement.querySelector('.story-content');
+  const arrow=btn.querySelector('.story-arrow');
+  content.classList.toggle('open');
+  arrow.classList.toggle('open');
+}
+function toggleMenu(){
+  document.getElementById('nav-links').classList.toggle('open');
+}
+function closeMenu(){
+  document.getElementById('nav-links').classList.remove('open');
+}
+// Scroll fade-in
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible')}});
+},{threshold:0.1});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+// Trigger hero immediately
+document.querySelector('#hero .fade-in').classList.add('visible');
+</script>
+</body>
+</html>
