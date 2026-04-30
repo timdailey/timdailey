@@ -510,8 +510,10 @@
       </div>
 
       <div class="fade-in">
-        <form class="cform" action="https://formspree.io/f/xvzlokab" method="POST">
-          <input type="hidden" name="_next" value="/thanks">
+        <form class="cform" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="63b1c5b8-3faf-4897-ba86-4fa68559f2e0">
+        <input type="hidden" name="redirect" value="https://timdailey.com/thanks">
+        <input type="hidden" name="subject" value="New inquiry from timdailey.com">
           <div class="ffield">
             <label for="f-name">Your name</label>
             <input type="text" id="f-name" name="name" placeholder="Jane Smith" required>
